@@ -1,4 +1,8 @@
 import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+
 import {
     Button,
     Select,
@@ -18,7 +22,10 @@ import 'element-ui/lib/theme-default/index.css'
 import lang from 'element-ui/lib/locale/lang/en'
 import locale from 'element-ui/lib/locale'
 
-// more grace import third package !
+//import third package for Common
+
+
+// more grace import third package for Vue
 import moment from 'moment'
 import axios from 'axios'
 import curvejs from 'curvejs'

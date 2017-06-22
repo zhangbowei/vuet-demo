@@ -24,7 +24,6 @@
 </template>
 
 <script>
-    import lodash from 'lodash'
     import Bus from '../eventBus'
 
     export default {
