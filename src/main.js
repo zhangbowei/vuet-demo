@@ -1,21 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
-Vue.use(VueRouter)
-
+import routes from 'config/routes'
 import {
-    Button,
-    Select,
-    Row,
-    Col,
-    Pagination,
-    Table,
-    TableColumn,
-    Form,
-    FormItem,
-    Input,
-    Dialog,
-    Option
+  Button,
+  Select,
+  Row,
+  Col,
+  Pagination,
+  Table,
+  TableColumn,
+  Form,
+  FormItem,
+  Input,
+  Dialog,
+  Option
 } from 'element-ui'
 import App from './App.vue'
 import 'element-ui/lib/theme-default/index.css'
@@ -49,11 +47,14 @@ Vue.use(Option);
 
 locale.use(lang);
 
+Vue.use(VueRouter);
+const router = new VueRouter({
+  routes
+})
 
-
-// eslint-disable-next-line no-new
-new Vue({
-    el: '#app',
+const app = new Vue({
+    router,
     render: h => h(App)
-});
+}).$mount('#app')
+
 

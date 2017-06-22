@@ -22,8 +22,11 @@ module.exports = {
     extensions: ['.js', '.vue'],
     // 别名
     alias: {
-      components: resolve('./src/components'),
-      modules: resolve('./node_modules')
+      'vue': 'vue/dist/vue.js',
+      components: resolve('../src/components'),
+      modules: resolve('../node_modules'),
+      config: resolve('../src/config'),
+      pages: resolve('../src/pages')
     }
   },
   module: {
