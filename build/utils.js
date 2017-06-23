@@ -21,7 +21,10 @@ function genLoaders(lang) {
 
         loaders.unshift('vue-style-loader');
     }
-    return loaders;
+
+    return loaders.map(function(item) {
+      return { loader: item, options: { sourceMap: true } };
+    });
 }
 
 exports.styleLoaders = function() {

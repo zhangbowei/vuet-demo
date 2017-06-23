@@ -17,8 +17,6 @@ function addDlias(dir) {
     }, {});
 }
 
-console.log();
-
 module.exports = {
   entry: { app: resolve('../src/main.js') },
   output: {
@@ -34,7 +32,12 @@ module.exports = {
     // require时省略的扩展名，如：require('module') 不需要module.js
     extensions: ['.js', '.vue'],
     // 别名
-    alias: _.extend(addDlias('../src'), { 'vue': 'vue/dist/vue.js' }),
+    alias: _.extend(addDlias('../src'), {
+      vue: 'vue/dist/vue.js',
+      // 'vue': 'vue/dist/vue.common.js',
+      'vue-router': 'vue-router/dist/vue-router.common.js',
+      modules: resolve('../node_modules')
+    }),
     //   alias: {
     //     'vue': 'vue/dist/vue.js',
     //     components: resolve('../src/components'),

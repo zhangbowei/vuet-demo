@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from 'routes'
+// import vueState from 'vueState'
 
 
 import {
@@ -57,6 +58,7 @@ const router = new VueRouter({
 
 const app = new Vue({
   el: '#app',
+  // vueState,
   router,
   render: h => h(App)
 })

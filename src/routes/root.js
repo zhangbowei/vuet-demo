@@ -1,4 +1,6 @@
 import Home from 'pages/home';
+import TopicList from 'pages/list';
+import TopicDetail from 'pages/detail';
 
 const RouterView = {
   render(h) {
@@ -17,8 +19,18 @@ const root = [
     path: '/',
     component: RouterView,
     children: [
-      { path: '/home/1', component: Home },
-      { path: '/home', component: Foo },
+      // {
+      //   path: '',
+      //   name: 'topic-list',
+      //   component: TopicList
+      // },
+      // {
+      //   path: '/:id',
+      //   name: 'topic-detail',
+      //   component: TopicDetail
+      // },
+      { path: '/home', component: Home },
+      { path: '/foo', component: Foo },
       { path: '/bar', component: Bar },
       { path: '/user/:id', component: User }
     ]
