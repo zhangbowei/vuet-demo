@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import routes from 'routes'
 
-Vue.use(VueRouter)
 
 import {
     Button,
@@ -23,6 +23,7 @@ import {
     Submenu,
     MenuItem,
     MenuItemGroup,
+
 } from 'element-ui'
 import App from './App.vue'
 import 'element-ui/lib/theme-default/index.css'
@@ -63,11 +64,17 @@ Vue.use(MenuItemGroup);
 
 locale.use(lang);
 
+Vue.use(VueRouter);
 
+const router = new VueRouter({
+  routes
+})
 
-// eslint-disable-next-line no-new
-new Vue({
-    el: '#app',
-    render: h => h(App)
-});
+const app = new Vue({
+  el: '#app',
+  router,
+  render: h => h(App)
+})
+// }).$mount('#app')
+
 

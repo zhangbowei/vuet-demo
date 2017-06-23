@@ -1,10 +1,23 @@
 var webpack = require('webpack');
+var _ = require('lodash');
 var path = require('path');
 var utils = require('./utils');
+var fs = require('fs');
 
 function resolve(relPath) {
   return path.resolve(__dirname, relPath);
 }
+
+function addDlias(dir) {
+  return fs.readdirSync(__dirname + '/' + dir)
+    .filter((f) => !f.includes('.'))
+    .reduce((prev, name) => {
+      prev[name] = resolve(dir + '/' + name);
+      return prev;
+    }, {});
+}
+
+console.log();
 
 module.exports = {
   entry: { app: resolve('../src/main.js') },
@@ -21,10 +34,16 @@ module.exports = {
     // require时省略的扩展名，如：require('module') 不需要module.js
     extensions: ['.js', '.vue'],
     // 别名
-    alias: {
-      components: resolve('./src/components'),
-      modules: resolve('./node_modules')
-    }
+    alias: _.extend(addDlias('../src'), { 'vue': 'vue/dist/vue.js' }),
+    //   alias: {
+    //     'vue': 'vue/dist/vue.js',
+    //     components: resolve('../src/components'),
+    //     modules: resolve('../node_modules'),
+    //     routes: resolve('../src/routes'),
+    //     pages: resolve('../src/pages'),
+    //     images: resolve('../src/images'),
+    //     utils: resolve('../src/utils')
+    //   }
   },
   module: {
     rules: [{
