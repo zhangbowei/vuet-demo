@@ -15,7 +15,14 @@ import {
     FormItem,
     Input,
     Dialog,
-    Option
+    Option,
+    Dropdown,
+    DropdownMenu,
+    DropdownItem,
+    Menu,
+    Submenu,
+    MenuItem,
+    MenuItemGroup,
 } from 'element-ui'
 import App from './App.vue'
 import 'element-ui/lib/theme-default/index.css'
@@ -46,6 +53,13 @@ Vue.use(FormItem);
 Vue.use(Input);
 Vue.use(Dialog);
 Vue.use(Option);
+Vue.use(Dropdown);
+Vue.use(DropdownMenu);
+Vue.use(DropdownItem);
+Vue.use(Menu);
+Vue.use(Submenu);
+Vue.use(MenuItem);
+Vue.use(MenuItemGroup);
 
 locale.use(lang);
 
