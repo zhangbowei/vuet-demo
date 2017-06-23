@@ -50,6 +50,7 @@ Vue.use(Option);
 locale.use(lang);
 
 Vue.use(VueRouter);
+
 const router = new VueRouter({
   routes
 })
