@@ -25,8 +25,10 @@ module.exports = {
       'vue': 'vue/dist/vue.js',
       components: resolve('../src/components'),
       modules: resolve('../node_modules'),
-      config: resolve('../src/config'),
-      pages: resolve('../src/pages')
+      routes: resolve('../src/routes'),
+      pages: resolve('../src/pages'),
+      images: resolve('../src/images'),
+      utils: resolve('../src/utils')
     }
   },
   module: {
