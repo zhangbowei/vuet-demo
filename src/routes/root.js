@@ -1,10 +1,7 @@
 import Home from 'pages/home';
-<<<<<<< HEAD
 import TopicList from 'pages/list';
 import TopicDetail from 'pages/detail';
-=======
 import optionPage from 'pages/opt';
->>>>>>> 957df1eb152db4847122d9756fdbfe7033b7e287
 
 const RouterView = {
   render(h) {
