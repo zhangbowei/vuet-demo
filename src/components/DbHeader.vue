@@ -1,7 +1,7 @@
 <template>
     <header style="background-color: rgb(10, 47, 88);">
         <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-            <el-menu-item><img src="../assets/logoImg.jpg" alt="" class="logo"></el-menu-item>
+            <el-menu-item><img src="../assets/seetaLogo.png" alt="" class="logo"></el-menu-item>
             <el-menu-item index="1">处理中心</el-menu-item>
             <el-menu-item index="1">处理中心</el-menu-item>
             <el-submenu index="2">
