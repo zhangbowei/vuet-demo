@@ -1,53 +1,61 @@
 <template>
     <header style="background-color: rgb(10, 47, 88);">
-        <div class="text-logo">{{msg}}</div>
-        <p class="meta">This demo project for express new develop practice demo.</p>
-        <ul class="header-operations">
-        </ul>
+        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+            <el-menu-item index="9"><img src="../assets/seetaLogo.png" alt="" class="logo"></el-menu-item>
+            <el-menu-item index="1">处理中心</el-menu-item>
+            <el-submenu index="2">
+                <template slot="title">我的工作台</template>
+                <el-menu-item index="2-1">选项1</el-menu-item>
+                <el-menu-item index="2-2">选项2</el-menu-item>
+                <el-menu-item index="2-3">选项3</el-menu-item>
+            </el-submenu>
+            <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+            <el-menu-item index="4"><el-button type="primary" @click="getMsg">上传<i class="el-icon-upload el-icon--right"></i></el-button></el-menu-item>
+        </el-menu>
+        <div class="line"></div>
+
     </header>
 </template>
-
 <script>
     export default {
         name: 'db-header',
-        data () {
+        data() {
             return {
-                msg: 'SanicCRUD-vue'
+                activeIndex: '1'
+            };
+        },
+        methods: {
+            handleSelect(key, keyPath) {
+                console.log(key, keyPath);
+            },
+            getMsg(key, keyPath){
+                let config = {
+                    method: 'post',
+                    url: 'http://localhost/return.php',
+                    data: {
+                        request: "getMsg",
+                        time:"2017.6.23"
+                    },
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    withCredentials:true
+                };
+                console.log(config);
+                this.$axios(config)
+                    .then(function (response) {
+                        console.log(response)
+                    })
+                    .catch(function (err) {
+                        console.log(err)
+                    })
             }
         }
     }
 </script>
 
 <style>
-    header {
-        height: 70px;
-        position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
-        padding: 0 20px;
-        z-index: 1;
-        box-sizing: border-box;
-    }
-
-    .text-logo {
-        display: inline-block;
-        vertical-align: middle;
-        border-style: none;
-        position: relative;
-        top: 26px;
-        right: -20px;
-        font-size: 25px;
-        color: white;
-
-    }
-
-    .meta {
-        color: #7e95c5;
-        width: 200px;
-        display: block;
-        margin: -5px 0 0 225px;
-        font-weight: 700;
-        font-size: 0.3rem;
-    }
+.logo{
+    height: 100%;
+}
 </style>
