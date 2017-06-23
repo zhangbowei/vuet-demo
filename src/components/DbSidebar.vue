@@ -1,6 +1,6 @@
 <template>
     <ul>
-        <li class="el-menu-item is-active" v-for="titles in msg" style=""><a href="javascript:void(0)" @:>{{titles.title}}</a></li>
+        <li class="el-menu-item is-active" v-for="titles in msg" style=""><a href="javascript:void(0)" v-bind:href="titles.url">{{titles.title}}</a></li>
     </ul>
 </template>
 
@@ -11,8 +11,8 @@
         data() {
             return {
                 msg: [
-                    {title: "1"},
-                    {title: "2"},
+                    {title: "1", url: "/#/home/1"},
+                    {title: "2", url: "/#/home/opt"},
                     {title: "3"},
                     {title: "4"},
                     {title: "5"},
@@ -25,6 +25,11 @@
                 ]
             }
         },
+        methods: {
+            changePath: function () {
+                console.log(this.content + "clicked")
+            }
+        }
     }
 
 </script>

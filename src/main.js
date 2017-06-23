@@ -17,6 +17,7 @@ import {
     Dialog,
     Option,
     Dropdown,
+    Progress,
     DropdownMenu,
     DropdownItem,
     Menu,
@@ -55,6 +56,7 @@ Vue.use(Input);
 Vue.use(Dialog);
 Vue.use(Option);
 Vue.use(Dropdown);
+Vue.use(Progress);
 Vue.use(DropdownMenu);
 Vue.use(DropdownItem);
 Vue.use(Menu);

@@ -1,8 +1,7 @@
 <template>
     <header style="background-color: rgb(10, 47, 88);">
         <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-            <el-menu-item><img src="../assets/seetaLogo.png" alt="" class="logo"></el-menu-item>
-            <el-menu-item index="1">处理中心</el-menu-item>
+            <el-menu-item index="9"><img src="../assets/seetaLogo.png" alt="" class="logo"></el-menu-item>
             <el-menu-item index="1">处理中心</el-menu-item>
             <el-submenu index="2">
                 <template slot="title">我的工作台</template>
@@ -11,7 +10,7 @@
                 <el-menu-item index="2-3">选项3</el-menu-item>
             </el-submenu>
             <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
-            <el-menu-item><el-button type="primary" @click="getMsg">上传<i class="el-icon-upload el-icon--right"></i></el-button></el-menu-item>
+            <el-menu-item index="4"><el-button type="primary" @click="getMsg">上传<i class="el-icon-upload el-icon--right"></i></el-button></el-menu-item>
         </el-menu>
         <div class="line"></div>
 

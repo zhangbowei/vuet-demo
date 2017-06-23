@@ -7,11 +7,10 @@
             </el-col>
             <el-col :span="20" class="content">
                 <db-filterinput></db-filterinput>
-                <el-steps :space="100" :active="1">
-                    <el-step title="步骤 1" icon="edit"></el-step>
-                    <el-step title="步骤 2" icon="upload"></el-step>
-                    <el-step title="步骤 3" icon="picture"></el-step>
-                </el-steps>
+                <el-progress :percentage="0"></el-progress>
+                <el-progress :percentage="70"></el-progress>
+                <el-progress :percentage="100" status="success"></el-progress>
+                <el-progress :percentage="50" status="exception"></el-progress>
 
             </el-col>
 
