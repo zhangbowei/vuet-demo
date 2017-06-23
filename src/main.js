@@ -1,7 +1,8 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import routes from 'routes'
-// import vueState from 'vueState'
+import router from 'router'
+import vueState from 'vueState'
+import App from './App'
+import components from 'components'
 
 
 import {
@@ -27,7 +28,6 @@ import {
     MenuItemGroup,
 
 } from 'element-ui'
-import App from './App.vue'
 import 'element-ui/lib/theme-default/index.css'
 import lang from 'element-ui/lib/locale/lang/en'
 import locale from 'element-ui/lib/locale'
@@ -67,18 +67,16 @@ Vue.use(MenuItemGroup);
 
 locale.use(lang);
 
-Vue.use(VueRouter);
-
-const router = new VueRouter({
-  routes
+Object.keys(components).forEach((key) => {
+  var name = key.replace(/(\w)/, (v) => v.toUpperCase()) // 首字母大写
+  Vue.component(`v${name}`, components[key])
 })
 
 const app = new Vue({
   el: '#app',
-  // vueState,
+  vueState,
   router,
   render: h => h(App)
 })
-// }).$mount('#app')
 
 
