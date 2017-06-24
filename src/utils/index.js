@@ -7,6 +7,7 @@ export default {
     toast.className = 'common-toast common-toast-show'
     toast.innerHTML = msg
     document.body.appendChild(toast)
+
     toast.style.display = 'block'
     toast.style.margin = `-${toast.offsetHeight / 2}px 0 0 -${toast.offsetWidth / 2}px`
     var timer = setTimeout(() => {

@@ -3,6 +3,7 @@ import router from 'router'
 import vueState from 'vueState'
 import App from './App'
 import components from 'components'
+import 'style/common.css'
 
 
 import {
@@ -67,6 +68,7 @@ Vue.use(MenuItemGroup);
 
 locale.use(lang);
 
+//注册成全局组件
 Object.keys(components).forEach((key) => {
   var name = key.replace(/(\w)/, (v) => v.toUpperCase()) // 首字母大写
   Vue.component(`v${name}`, components[key])

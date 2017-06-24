@@ -121,7 +121,7 @@ export default new Vuet({
       self: {
         data () {
           return {
-            data: JSON.parse(localStorage.getItem('vue_cnode_self')) || {
+            data: JSON.parse(localStorage.getItem('seetatech_self')) || {
               avatar_url: null,
               id: null,
               loginname: null,
@@ -131,17 +131,18 @@ export default new Vuet({
         },
         manuals: {
           async login ({ state }, accesstoken) {
-            const res = await http.post(`/accesstoken`, { accesstoken })
+            // const res = await http.post(`/accesstoken`, { accesstoken })
+            const res = await this.$axios.get("http://127.0.0.1:8000/api/persons/sex");
             if (typeof res === 'object' && res.success) {
               state.data = res
-              localStorage.setItem('vue_cnode_self', JSON.stringify(res))
-              localStorage.setItem('vue_cnode_accesstoken', accesstoken)
+              localStorage.setItem('seetatech_self', JSON.stringify(res))
+              localStorage.setItem('seetatech_accesstoken', accesstoken)
             }
             return res
           },
           signout () {
-            localStorage.removeItem('vue_cnode_self')
-            localStorage.removeItem('vue_cnode_accesstoken')
+            localStorage.removeItem('seetatech_self')
+            localStorage.removeItem('seetatech_accesstoken')
             this.reset()
           }
         }
