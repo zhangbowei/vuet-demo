@@ -33,8 +33,8 @@ module.exports = {
     extensions: ['.js', '.vue'],
     // 别名
     alias: _.extend(addDlias('../src'), {
-      vue: 'vue/dist/vue.js',
-      // 'vue': 'vue/dist/vue.common.js',
+      // vue: 'vue/dist/vue.js',
+      'vue': 'vue/dist/vue.common.js',
       'vue-router': 'vue-router/dist/vue-router.common.js',
       modules: resolve('../node_modules')
     }),

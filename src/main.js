@@ -74,7 +74,7 @@ Object.keys(components).forEach((key) => {
 
 const app = new Vue({
   el: '#app',
-  vueState,
+  vuet: vueState,
   router,
   render: h => h(App)
 })
