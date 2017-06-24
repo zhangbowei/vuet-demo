@@ -32,7 +32,7 @@ import { mapRules } from 'vuet'
 
 export default {
   mixins: [
-    mapRules({ manual: 'user-self' })
+    mapRules({ manual: 'user' })
   ],
   data() {
     return {
@@ -46,23 +46,21 @@ export default {
   },
   methods: {
     async submit() {
-      if (this.status) return
-      if (!this.form.accesstoken) return utils.toast('请输入accesstoken')
-      this.status = true
-      try {
-        const res = await this.$self.login(this.form.accesstoken)
-        // const res = null;
-        if (is.object(res)) {
-          if (res.success) {
-            utils.toast('登录成功')
-            this.$router.go(-1)
-          } else {
-            utils.toast(res.error_msg)
-          }
+      if (this.status) return;
+      if (!this.form.accesstoken) return utils.toast('请输入accesstoken');
+      this.status = true;
+
+      console.log(this.$user);
+      const res = await this.$user.signin(this.form.accesstoken);
+      // const res = null;
+      if (is.object(res)) {
+        if (res.success) {
+          utils.toast('登录成功')
+          this.$router.go(-1)
         } else {
-          utils.toast('登录失败')
+          utils.toast(res.error_msg)
         }
-      } catch (e) {
+      } else {
         utils.toast('登录失败')
       }
       this.status = false

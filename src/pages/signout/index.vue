@@ -7,10 +7,10 @@
 
   export default {
     mixins: [
-      mapRules({ manual: 'user-self' })
+      mapRules({ manual: 'user' })
     ],
     mounted () {
-      this.$self.signout()
+      this.$user.signout()
       this.$router.replace('/')
     }
   }
